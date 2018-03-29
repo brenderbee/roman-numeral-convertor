@@ -1,20 +1,12 @@
 // Begin business logic.
+var numerals = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function convertor(number) {
+  if (number === 5){
+    numerals.push("V");
+    return numerals;
+  }
+}
 
 
 // Begin User interface logic.
@@ -24,8 +16,10 @@ $(document).ready(function(){
     event.preventDefault();
 
     var inputNumber = parseInt($("#number").val());
-    alert(inputNumber);
 
+    var output = convertor(inputNumber);
+
+    alert(output);
 
 
   });
