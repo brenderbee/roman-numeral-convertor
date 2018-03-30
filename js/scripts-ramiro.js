@@ -5,18 +5,16 @@ var reverseNumerals = [];
 function convert(numbers) {
   var reverseNumbers = numbers.reverse();
 
-  for (var number=0; number < reverseNumbers.length; number++;) {
+  for (var index=0; index < reverseNumbers.length; index++;) {
+    var number = reverseNumbers[index];
     if (number <= 3) {
-      reverseNumerals.push("I".repeat(reverseNumbers[0]));
-    } else if (number > 4 && reverseNumbers[0] < 9) {
-      reverseNumerals.push("I".repeat(reverseNumbers[0]-5), "V");
+      reverseNumerals.push("I".repeat(number));
+    } else if (number > 4 && number < 9) {
+      reverseNumerals.push("I".repeat(number-5), "V");
     } else if (number === 4) {
       reverseNumerals.push("V", "I");
     } else if (number === 9) {
       reverseNumerals.push("X", "I");
-      console.log('I expect this for 9');
-    } else {
-      return reverseNumerals;
     }
   }
 
