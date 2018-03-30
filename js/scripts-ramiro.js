@@ -1,28 +1,27 @@
 // Begin business logic.
 
+var reverseNumerals = [];
 
 function convert(numbers) {
-
-  var reverseNumerals = [];
   var reverseNumbers = numbers.reverse();
 
-  if (reverseNumbers[0] <= 3) {
-    reverseNumerals.push("I".repeat(reverseNumbers[0]));
-  } else if (reverseNumbers[0] > 4 && reverseNumbers[0] < 9) {
-    reverseNumerals.push("I".repeat(reverseNumbers[0]-5), "V");
-  } else if (reverseNumbers[0] === 4) {
-    reverseNumerals.push("V", "I");
-  } else if (reverseNumbers[0] === 9) {
-    reverseNumerals.push("X", "I");
+  for (var number=0; number < reverseNumbers.length; number++;) {
+    if (number <= 3) {
+      reverseNumerals.push("I".repeat(reverseNumbers[0]));
+    } else if (number > 4 && reverseNumbers[0] < 9) {
+      reverseNumerals.push("I".repeat(reverseNumbers[0]-5), "V");
+    } else if (number === 4) {
+      reverseNumerals.push("V", "I");
+    } else if (number === 9) {
+      reverseNumerals.push("X", "I");
+      console.log('I expect this for 9');
+    } else {
+      return reverseNumerals;
+    }
   }
 
-  // There needs to be a guard clause checking for presence, something like
-  // if ( typeof reverseNumbers[1] !== 'NaN' ) { thisWholeBlock }
-  // Likely a better way to do it (and what they intended) is to
-  // loop over all your reverseNumbers via forEach(number, index)
-  // then use the index to determine which set of roman numerals you should use
-  // (ie for number === 4,  my_set.push romanSet[index][number]) which would
-  // correspond to romanSet = { 1: { 4: 'LX' } }
+
+
   if (reverseNumbers[1] <= 3) {
     reverseNumerals.push("X".repeat(reverseNumbers[1]));
   } else if (reverseNumbers[1] > 4 && reverseNumbers[1] < 9) {
@@ -31,6 +30,9 @@ function convert(numbers) {
     reverseNumerals.push("L", "X");
   } else if (reverseNumbers[1] === 9) {
     reverseNumerals.push("C", "X");
+    console.log('I expect this for 9 at digit 2');
+  } else {
+    return reverseNumerals;
   }
 
   if (reverseNumbers[2] <= 3) {
@@ -41,12 +43,18 @@ function convert(numbers) {
     reverseNumerals.push("D", "C");
   } else if (reverseNumbers[2] === 9) {
     reverseNumerals.push("M", "C");
+  } else {
+    return reverseNumerals;
   }
 
   if (reverseNumbers[3] <= 3) {
     reverseNumerals.push("M".repeat(reverseNumbers[3]));
+  } else {
+    return reverseNumerals;
   }
 
+  // We Should reach here but we don't
+  console.log('I expect to reach here');
   return reverseNumerals.reverse().join("");
 }
 
@@ -63,8 +71,6 @@ $(document).ready(function(){
     });
 
     var output = convert(inputNumbers);
-
-    $("#result").text(output);
 
     console.log(output);
   });
