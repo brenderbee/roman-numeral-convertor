@@ -11,7 +11,7 @@ A website created with HTML and JavaScript to return a Roman numeral from a numb
 
 ### Specs
 | Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
+| :------------- | :------------- | :------------- |
 | **Program takes a number that is a base roman numeral and returns a single roman numeral** | User input: "5" | Output: "V" |
 | **Program takes a number that is the sum of base roman numerals and returns a roman numeral**| User Input: "66" | Output: "LXVI" |
 | **Program takes a number that is not the sum of base roman numerals and returns a roman numeral**| Input: "34" | Output: "XXXIIII" |
