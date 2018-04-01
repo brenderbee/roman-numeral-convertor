@@ -10,10 +10,9 @@ function convert(numbers, validation) {
     var error = "Please enter a number!"
     return error;
   } else if (validation < 0 || validation > 3999) {
-      var error = "Fun fact: Roman numerals are very limited and only range from 1 to 3,999!"
-      return error;
-    }
-
+    var error = "Fun fact: Roman numerals are very limited and only range from 1 to 3,999!"
+    return error;
+  }
 
   reverseNumbers.forEach(function(number) {
     if (number <= 3) {
@@ -32,7 +31,6 @@ function convert(numbers, validation) {
   });
   return reverseNumerals.reverse().join("");
 }
-
 
 // Begin User interface logic.
 $(document).ready(function(){
