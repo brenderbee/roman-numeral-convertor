@@ -21,6 +21,7 @@ A website created with HTML and JavaScript to return a Roman numeral from a numb
 ## Setup/Installation Requirements
 
 1. To run this program, open index.html in browser.
+2. View GH Pages: https://brenderbee.github.io/roman-numeral-convertor/
 
 ## Known Bugs
 * No known bugs at this time.

@@ -38,6 +38,7 @@ function convert(numbers, validation) {
 $(document).ready(function(){
   $("form.convertor").submit(function(event){
     event.preventDefault();
+    $(".result").hide();
 
     var inputString = $("#number").val();
     var inputValidation = parseInt($("#number").val());
@@ -47,6 +48,7 @@ $(document).ready(function(){
 
     var output = convert(inputNumbers, inputValidation);
 
+    $(".result").fadeIn();
     $("#result").text(output);
   });
 });
