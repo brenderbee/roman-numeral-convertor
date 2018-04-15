@@ -13,9 +13,10 @@ A website created with HTML and JavaScript to return a Roman numeral from a numb
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | **Program takes a number that is a base roman numeral and returns a single roman numeral** | User input: "5" | Output: "V" |
+| **Program takes a 4 and returns a roman numeral"** | User input: "4" | Output: IV" |
+| **Program takes a 9 and returns a roman numeral"** | User input: "9" | Output: IX" |
 | **Program takes a number that is the sum of base roman numerals and returns a roman numeral**| User Input: "66" | Output: "LXVI" |
-| **Program takes a number that is not the sum of base roman numerals and returns a roman numeral**| Input: "34" | Output: "XXXIIII" |
-| **Program takes a number that is not the sum of base roman numerals and returns a roman numeral and adjusts for numerals repeating more than 3 times)** | Input: "34" | Output: "XXXIV" |
+| **Program takes a number that is not the sum of base roman numerals and returns a roman numeral**| Input: "34" | Output: "XXXIV" |
 
 
 ## Setup/Installation Requirements
