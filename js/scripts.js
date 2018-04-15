@@ -1,18 +1,10 @@
 // Begin business logic.
-function convert(numbers, validation) {
+function convert(numbers) {
 
   var reverseNumerals = [];
   var reverseNumbers = numbers.reverse();
   var numerals = ["I", "V", "X", "L", "C", "D", "M"];
   var j = 0;
-
-  if (isNaN(validation)) {
-    var error = "Please enter a number!"
-    return error;
-  } else if (validation < 0 || validation > 3999) {
-    var error = "Fun fact: Roman numerals are very limited and only range from 1 to 3,999!"
-    return error;
-  }
 
   reverseNumbers.forEach(function(number) {
     if (number <= 3) {
@@ -44,7 +36,18 @@ $(document).ready(function(){
       return parseInt(number);
     });
 
-    var output = convert(inputNumbers, inputValidation);
+    if (isNaN(inputValidation)) {
+      var error = "Please enter a number!"
+      $(".result").fadeIn();
+      return $("#result").text(error);
+    } else if (inputValidation <= 0 || inputValidation > 3999) {
+      var error = "Fun fact: Roman numerals are very limited and only range from 1 to 3,999!"
+      $(".result").fadeIn();
+      return $("#result").text(error);
+    }
+
+
+    var output = convert(inputNumbers);
 
     $(".result").fadeIn();
     $("#result").text(output);
